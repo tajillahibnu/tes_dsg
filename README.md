@@ -28,7 +28,6 @@ Repository GitHub: [tajillahibnu/tes_dsg](https://github.com/tajillahibnu/tes_ds
 ### 📌 Tampilan Tabel Data Buku
 ![Tabel Buku](image/image-3.png)
 
-
 ---
 
 ## 🚀 Instalasi & Menjalankan Proyek
@@ -48,6 +47,12 @@ cd backend
 npm install
 ```
 
+Jika terjadi error saat `npm install`, hapus file `package-lock.json` lalu coba instal ulang:
+```sh
+rm -f package-lock.json
+npm install
+```
+
 ### ⚙️ Konfigurasi `.env`
 Buat file `.env` di dalam folder `backend` dan tambahkan konfigurasi berikut:
 ```env
@@ -55,6 +60,12 @@ DATABASE_URL=mysql://user:password@localhost:3306/db_name
 APP_PORT=8081
 # APP_URL digunakan untuk CORS frontend atau URL frontend
 APP_URL=http://localhost:3000
+```
+
+### 🗄️ Migrasi Database
+Pastikan database MySQL telah dibuat, lalu jalankan perintah berikut untuk melakukan migrasi database menggunakan Drizzle ORM:
+```sh
+npm run db:migrate
 ```
 
 ### 🚀 Menjalankan Backend
@@ -69,6 +80,12 @@ Server akan berjalan di `http://localhost:8081`.
 ### 📌 Instalasi Frontend
 ```sh
 cd frontend
+npm install
+```
+
+Jika terjadi error saat `npm install`, hapus file `package-lock.json` lalu coba instal ulang:
+```sh
+rm -f package-lock.json
 npm install
 ```
 
@@ -133,8 +150,16 @@ Berikut adalah versi yang digunakan saat pengembangan proyek ini:
 
 ---
 
+## 📧 Kontak
+Jika ada pertanyaan atau membutuhkan bantuan lebih lanjut, silakan hubungi:
+
+📩 Email: [tajillah@gmail.com](mailto:tajillah@gmail.com)
+
+---
+
 ## 💡 Catatan Tambahan
 - Gunakan **npm** untuk instalasi dependency.
 - Pastikan database **MySQL** sudah berjalan sebelum menjalankan backend.
-
----
+- Jika terjadi error saat `npm install`, hapus `package-lock.json` lalu install ulang.
+- Setelah konfigurasi database selesai, jalankan **`npm run db:migrate`** untuk membuat tabel.
+- Jika terdapat perubahan pada fild table, jalankan **`npm run db:generate`** untuk memperbarui drizzle kemudian jalankan **`npm run db:migrate`**.
